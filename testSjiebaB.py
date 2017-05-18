@@ -1,7 +1,10 @@
-#encoding=utf-8
+# encoding=utf-8
 import jieba
+
+jieba.set_dictionary('dict.txt.big')
+jieba.load_userdict('dictnew.txt')
 content = open('D:\\Shared\\Rawdata\\Raw\\B.txt', 'rb').read()
-wordss = jieba.cut(content, cut_all=False)
+wordss = jieba.cut(content, cut_all=False, HMM=True)
 f = open('D:\\Shared\\Rawdata\\Split\\test\\splitB.txt', 'a', encoding='UTF-8')
 words = set(wordss)
 for word in words:
