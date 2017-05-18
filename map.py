@@ -23,6 +23,6 @@ with open('C:\\Users\\Tao\\Desktop\\test\\totalpost.csv', 'r', encoding='UTF-8')
         temp[1]=row2[1]
         with open('C:\\Users\\Tao\\Desktop\\test\\totalpost1.csv', 'w', encoding='UTF-8') as csvfile3:
             spamreader3 = csv.writer(csvfile3)
-            spamreader3.writerows(temp)
+            spamreader3.writerow(temp)
         print("end")
 
