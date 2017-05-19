@@ -1,7 +1,8 @@
 #encoding=utf-8
 import jieba
 import jieba.analyse
-
+jieba.set_dictionary('dict.txt.big')
+jieba.load_userdict('dictnew.txt')
 
 content = open('D://TestAI.txt', 'rb').read()
 jieba.analyse.set_stop_words('D:\\words\\stopwords.txt')

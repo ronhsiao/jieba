@@ -1,12 +1,21 @@
-#encoding=utf-8
+# encoding=utf-8
 import jieba
+import csv
+import re
+
+f = open('D:\\Shared\\Rawdata\\Split\\test\\splitC.txt', 'a', encoding='UTF-8')
+splitcsv = []
 jieba.set_dictionary('dict.txt.big')
 jieba.load_userdict('dictnew.txt')
-content = open('D:\\Shared\\Rawdata\\Raw\\C.txt', 'rb').read()
-words = jieba.cut(content, cut_all=False, HMM=True)
-f = open('D:\\Shared\\Rawdata\\Split\\test\\splitC.txt', 'a', encoding='UTF-8')
-# words = set(wordss)
-for word in words:
-    f.write(word)
-    f.write("\n")
+with open('D:\\Shared\\Rawdata\\Raw\\C.csv', encoding='UTF-8') as rawcsv:
+    readCSV = csv.DictReader(rawcsv, delimiter=',')
+    for row in readCSV:
+        splitpost = []
+        temp = row['article']
+        article = re.sub("[\s+\.\!\/_,$%^*(+\"\'\-]+|[+——！，。？、~@#￥%……&*（）「」《》?：·)．〈〉:／；◆■◇×=|°│─;“”\[\]→↓Ｎㄧˋ％\}\{\>\<’`÷‘\\±↑╱\『˙＜≠┤‘§€↑╱★ˇ←≧┐└]+", "", temp)
+        words = jieba.cut(article, cut_all=False, HMM=True)
+        for word in words:
+            f.write(word)
+            f.write("\n")
 f.close()
+rawcsv.close()
