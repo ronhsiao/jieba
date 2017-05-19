@@ -20,6 +20,6 @@ for asd in a:
             z += 1
             q += 1
     x += 1
-    y += 1
+    y += 1 
     end.append(xxx)
 print(end)
