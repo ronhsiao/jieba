@@ -3,12 +3,12 @@ import jieba
 import csv
 import re
 
-f = open('D:\\Shared\\Rawdata\\Split\\test\\RAWsplitB.csv', 'a', encoding='UTF-8')
+f = open('D:\\Shared\\Rawdata\\Split\\test\\RAWsplitC.csv', 'a', encoding='UTF-8')
 splitcsv = []
 jieba.set_dictionary('dict.txt.big')
 jieba.load_userdict('dictnew.txt')
-x=663
-with open('D:\\Shared\\Rawdata\\Raw\\B.csv', encoding='UTF-8') as rawcsv:
+x=6191
+with open('D:\\Shared\\Rawdata\\Raw\\C.csv', encoding='UTF-8') as rawcsv:
     readCSV = csv.DictReader(rawcsv, delimiter=',')
     for row in readCSV:
         splitpost = []
