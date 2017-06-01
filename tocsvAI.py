@@ -3,13 +3,13 @@ import jieba
 import csv
 import re
 
-f = open('D:\\Shared\\Rawdata\\Split\\test\\RAWsplitAI.csv', 'a', encoding='UTF-8')
+f = open('D:\\Shared\\Rawdata\\Split\\test\\RAWsplitS.csv', 'a', encoding='UTF-8')
 splitcsv = []
 jieba.set_dictionary('dict.txt.big')
 jieba.load_userdict('dictnew.txt')
-with open('D:\\Shared\\Rawdata\\Raw\\AI.csv', encoding='UTF-8') as rawcsv:
+with open('D:\\Shared\\Rawdata\\Raw\\S.csv', encoding='UTF-8') as rawcsv:
     readCSV = csv.DictReader(rawcsv, delimiter=',')
-    x = 1
+    x = 200000
     for row in readCSV:
         splitpost = []
         temp = row['article']
